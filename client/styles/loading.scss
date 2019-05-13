@@ -1,0 +1,91 @@
+@import 'variables';
+
+.loading {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  &__body {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    z-index: 1;
+    animation: 1.2s spin linear infinite normal;
+    &__item {
+      background: $color-primary;
+      height: 15px;
+      width: 15px;
+      border-radius: 50px;
+      position: absolute;
+      &.first {
+        top: 0;
+        left: calc(27.5px - 7.5px);
+        animation: 0.7s move1 ease-in-out infinite alternate;
+      }
+      &.second {
+        right: 0;
+        top: calc(27.5px - 7.5px);
+        animation: 0.7s move2 ease-in-out infinite alternate;
+      }
+      &.third {
+        bottom: 0;
+        left: calc(27.5px - 7.5px);
+        animation: 0.7s move3 ease-in-out infinite alternate;
+      }
+      &.forth {
+        left: 0;
+        top: calc(27.5px - 7.5px);
+        animation: 0.7s move4 ease-in-out infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move1 {
+  0%,
+  40% {
+    top: 0;
+  }
+  to {
+    top: calc(27.5px - 7.5px);
+  }
+}
+@keyframes move2 {
+  0%,
+  40% {
+    right: 0;
+  }
+  to {
+    right: calc(27.5px - 7.5px);
+  }
+}
+@keyframes move3 {
+  0%,
+  40% {
+    bottom: 0;
+  }
+  to {
+    bottom: calc(27.5px - 7.5px);
+  }
+}
+@keyframes move4 {
+  0%,
+  40% {
+    left: 0;
+  }
+  to {
+    left: calc(27.5px - 7.5px);
+  }
+}
