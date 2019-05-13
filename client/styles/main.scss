@@ -1,1 +1,45 @@
-// Styles goes here..
+@import 'variables';
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  &__title {
+    text-align: center;
+    font-weight: 900;
+    font-style: italic;
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+html {
+  font-family: sans-serif;
+
+  body {
+    margin: 0;
+  }
+}
+
+.underline {
+  position: relative;
+  &:after {
+    background-image: linear-gradient(
+      -90deg,
+      rgba(14, 30, 37, 0) 0px,
+      $color-secondary 5%,
+      $color-secondary 90%,
+      rgba(14, 30, 37, 0) 100%
+    );
+    content: '';
+    display: block;
+    height: 2px;
+    opacity: 0.77;
+    width: 100%;
+    left: 0;
+    margin: 0px auto;
+    bottom: 10px;
+    position: absolute;
+  }
+}
